@@ -1,5 +1,5 @@
 import { KafkaMessage } from "kafkajs";
-import { Consumer } from "@/utils/kafka";
+import { Consumer } from "@codrjs/kafka";
 
 import dotenv from "dotenv";
 dotenv.config();

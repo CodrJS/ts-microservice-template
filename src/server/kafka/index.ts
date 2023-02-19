@@ -1,5 +1,5 @@
-import ServiceHealth from "@/utils/health";
-import { admin } from "../utils/kafka";
+import { ServiceHealth } from "@codrjs/health";
+import { admin } from "@codrjs/kafka";
 import TestConsumer from "./consumers/TestConsumer";
 import TestProducer from "./producers/TestProducer";
 
@@ -22,12 +22,3 @@ export const stop = async function stop() {
     console.log("Kafka admin has left the chat.");
   });
 };
-
-process.on("SIGINT", async function () {
-  console.log("Shutting down...");
-  console.log(JSON.stringify(ServiceHealth.getStatus(), null, 2));
-
-  await stop();
-
-  process.exit();
-});

@@ -2,6 +2,21 @@
 # yarn lockfile v1
 
 
+"@codrjs/health@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@codrjs/health/-/health-1.0.2.tgz#8469df38f900a6629697085acf07a1b343908d2e"
+  integrity sha512-QV8rMvJet6pPf3GKATcmibIjhGYxfHi5WkYopQMQGGe3tHtOT92ytu3DPQfNw58bm36ZfdqGXmn9GHeo43HrSw==
+
+"@codrjs/kafka@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@codrjs/kafka/-/kafka-1.0.0.tgz#c82c0078ff9dfa46a680ed7ff9532281b7adbb29"
+  integrity sha512-NLfH8mNLI53ZZK5KsJM2FpEqoRcqZRo9UcFlddvrL1bC85T3YiN4g6UY+wxUxWq+RdEj7vAd/OKks2yXzUIXxQ==
+  dependencies:
+    "@codrjs/health" "^1.0.2"
+    dotenv "^16.0.3"
+    kafkajs "^2.2.3"
+    winston "^3.8.2"
+
 "@colors/colors@1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"

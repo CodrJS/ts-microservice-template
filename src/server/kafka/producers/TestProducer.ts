@@ -1,4 +1,4 @@
-import { Producer } from "@/utils/kafka";
+import { Producer } from "@codrjs/kafka";
 
 // this should be imported from "@codrjs/models"
 interface TestMessage {

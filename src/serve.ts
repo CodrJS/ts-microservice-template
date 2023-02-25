@@ -1,13 +1,11 @@
-import { start, stop } from "@/server/kafka";
-import { ServiceHealth } from "@codrjs/health";
+import { Kafka, Express } from "./server";
 
-start();
+Kafka.start();
+Express.start();
 
 process.on("SIGINT", async function () {
-  console.log("Shutting down...");
-  console.log(JSON.stringify(ServiceHealth.getStatus(), null, 2));
-
-  await stop();
+  await Kafka.stop();
+  Express.stop();
 
   process.exit();
 });

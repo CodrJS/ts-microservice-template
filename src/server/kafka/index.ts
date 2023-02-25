@@ -1,4 +1,3 @@
-import { ServiceHealth } from "@codrjs/health";
 import { admin } from "@codrjs/kafka";
 import TestConsumer from "./consumers/TestConsumer";
 import TestProducer from "./producers/TestProducer";
@@ -10,8 +9,6 @@ export const start = function start() {
 
   TestConsumer.start();
   TestProducer.start();
-
-  console.log(ServiceHealth.getStatus());
 };
 
 export const stop = async function stop() {

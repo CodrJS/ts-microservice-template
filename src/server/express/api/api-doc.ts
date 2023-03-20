@@ -12,7 +12,7 @@ import {
   R503,
 } from "@dylanbulmer/openapi/classes/responses";
 import {
-  BaseSchema,
+  BaseEntitySchema,
   ErrorSchema,
   GenericSchema,
   HealthSchema,
@@ -62,7 +62,7 @@ const settings: OpenAPIV3_1.Document = {
       "503": R503,
     },
     schemas: {
-      BaseSchema,
+      BaseSchema: BaseEntitySchema,
       ErrorSchema,
       GenericSchema,
       HealthSchema,

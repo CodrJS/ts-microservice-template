@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "scripts": {
     "start": "node dist/serve.js",
-    "build": "swc ./src -d dist"
+    "build": "swc ./src -d dist",
+    "build:docker": "docker build -t codr-svc-template .",
+    "test": "jest --config jest.config.json --passWithNoTests --coverage"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.62",

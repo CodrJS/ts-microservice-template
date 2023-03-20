@@ -11,7 +11,13 @@ import {
   R500,
   R503,
 } from "@dylanbulmer/openapi/classes/responses";
-import { ErrorSchema, GenericSchema } from "./schemas";
+import {
+  BaseSchema,
+  ErrorSchema,
+  GenericSchema,
+  HealthSchema,
+} from "./schemas";
+import { BearerScheme } from "./schemes";
 
 const settings: OpenAPIV3_1.Document = {
   openapi: "3.1.0",
@@ -30,8 +36,8 @@ const settings: OpenAPIV3_1.Document = {
     description: "A sample API to illustrate OpenAPI concepts",
     contact: {
       name: "Dylan Bulmer",
-      url: "https://dylanbulmer.com",
-      email: "dylan@dylanbulmer.com",
+      url: "https://codrjs.com",
+      email: "dylan@codrjs.com",
     },
     license: {
       name: "MIT",
@@ -56,8 +62,13 @@ const settings: OpenAPIV3_1.Document = {
       "503": R503,
     },
     schemas: {
-      GenericSchema: GenericSchema,
-      ErrorSchema: ErrorSchema,
+      BaseSchema,
+      ErrorSchema,
+      GenericSchema,
+      HealthSchema,
+    },
+    securitySchemes: {
+      Bearer: BearerScheme,
     },
   },
 };

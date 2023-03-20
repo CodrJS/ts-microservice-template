@@ -75,3 +75,24 @@ import mongoose from "mongoose";
 const client = mongoose.connect(...);
 ServiceHealth.addMongo(client.connection);
 ```
+
+## Mongo
+
+If mongo is not needed, but remove the `src/server/mongo/` folder and update the `src/server/index.ts`
+and `src/serve.ts` accordingly. Also remove the `src/types/index.d.ts` file.
+
+## Environment
+
+Necessary variables needed to run:
+
+| Env var                | Location               | Required | Description                                                                             |
+| ---------------------- | ---------------------- | -------- | --------------------------------------------------------------------------------------- |
+| `ENV`                  | `env`                  | `true`   | Deployment envionment - `dev`, `qa`, `stage`, `prod`                                    |
+| `EXPRESS_HOST`         | `express.host`         | `false`  | Express server - listener host                                                          |
+| `EXPRESS_PORT`         | `express.port`         | `false`  | Express server - listener port                                                          |
+| `MONGO_URI`            | `mongo.uri`            | `true`   | MongoDB - server URL, please include username and password to this string               |
+| `KAFKA_BROKERS`        | `kafka.brokers`        | `true`   | Kafka server - comma seperated locations of the kafka brokers                           |
+| `KAFKA_CLIENT_ID`      | `kafka.clientId`       | `true`   | Kafka server - name of the kafka cluster                                                |
+| `KAFKA_CONSUMER_GROUP` | `kafka.consumer.group` | `true`   | Kafka server - consumer group                                                           |
+| `JWT_SECRET`           | `jwt.secret`           | `false`  | JWT - secret, key to decode jwt, must be the same across all services in an environment |
+| `JWT_ISSUER`           | `jwt.issuer`           | `false`  | JWT - issuer, default `codrjs.com`                                                      |

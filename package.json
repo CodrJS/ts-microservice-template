@@ -5,8 +5,9 @@
   "scripts": {
     "start": "node dist/serve.js",
     "build": "swc ./src -d dist",
-    "build:docker": "docker build -t codr-svc-template .",
-    "test": "jest --config jest.config.json --passWithNoTests --coverage"
+    "test": "jest --config jest.config.json --passWithNoTests --coverage",
+    "docker:build": "docker build -t codr-svc-template .",
+    "docker:run": "docker run --env-file=.env -p 8000:8000 ghcr.io/codrjs/ts-microservice-template:latest"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.62",

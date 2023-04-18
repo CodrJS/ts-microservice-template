@@ -14,6 +14,10 @@
       "@/express/*": ["./server/express/*"],
       "@/kakfa/*": ["./server/kafka/*"],
       "@/mongo/*": ["./server/mongo/*"]
+    },
+    "minify": {
+      "compress": true,
+      "mangle": true
     }
   },
   "module": {

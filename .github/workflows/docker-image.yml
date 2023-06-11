@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - "**"
-    tags:
-      - "v*.*.*"
   pull_request:
     branches:
       - "main"
+  release:
+    types: [created]
 
 jobs:
   test:
@@ -85,9 +85,9 @@ jobs:
             RELEASE_TIME=${{ github.event.release.created_at }}
             GIT_REPO=${{ github.repository }}
             GIT_COMMIT_SHA=${{ github.sha }}
-            GIT_COMMIT_TIME=${{ github.event.push.head_commit.timestamp }}
+            GIT_COMMIT_TIME=${{ github.event.head_commit.timestamp }}
             GIT_REF=${{ github.ref_name }}
-            GIT_WORKFLOW_SHA=${{ github.workflow_sha }}
+            GIT_WORKFLOW_SHA=${{ github.run_id }}
           cache-from: type=registry,ref=${{ github.ref_name }}
           cache-to: type=inline
 
